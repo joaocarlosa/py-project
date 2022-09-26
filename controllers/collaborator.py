@@ -7,10 +7,10 @@ from controllers.company import *
 class Collaborator(Resource):
     
     #show all collaborator in enterprise args
-    def get(self, name):
+    def get(self, business):
         data = []
         for collab in enterprises:
-            if collab['name'] == name:
+            if collab['business'] == business:
                 return collab
         return None
 

@@ -37,7 +37,7 @@ class Company(Resource):
         data = Company.args.parse_args()
         new_data = {**data}
         enterprises.append(new_data) 
-        new_data = HotelModel(**data)
+        #new_data = HotelModel(**data)
         return enterprises, 201
         #return enterprises, 201
         
