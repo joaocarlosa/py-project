@@ -34,20 +34,23 @@ class Company(Resource):
         return {'message': ITEM_NOT_FOUND}, 404  
     
     def post(self, id):      
-        data = Company.args.parse_args()       
-        new_data = {'id': id, **data}       
-        enterprises.append(new_data)
-        return new_data, 201
+        data = Company.args.parse_args()
+        new_data = {**data}
+        enterprises.append(new_data) 
+        new_data = HotelModel(**data)
+        return enterprises, 201
+        #return enterprises, 201
         
     def put(self, id):
         data = Company.args.parse_args()        
-        new_data = {'id': id, **data}
-        
+        new_data = {**data}
         enterprise = Company.find_enterprise(id)
         if enterprise:
             enterprise.update(new_data)
             return new_data, 202
         enterprises.append(new_data)
+        
+        new_data = HotelModel(**data)
         return new_data, 201 #created
         
     def delete(self, id):

@@ -6,7 +6,7 @@ from controllers.company import *
 
 class Collaborator(Resource):
     
-    #get collaborator in enterprise args
+    #show all collaborator in enterprise args
     def get(self, name):
         data = []
         for collab in enterprises:
