@@ -3,7 +3,6 @@ from flask import jsonify, make_response
 import json
 from models.data import *
 
-
 ITEM_NOT_FOUND = 'Item not found'
 
 class Companies(Resource):
@@ -57,4 +56,3 @@ class Company(Resource):
         global enterprises
         enterprises = [enterprise for enterprise in enterprises if enterprise['id'] != id] #list comprehension
         return make_response(jsonify(enterprises), 200)
-  

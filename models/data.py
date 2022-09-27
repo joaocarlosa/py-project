@@ -1,15 +1,5 @@
-from sql_alchemy import banco
-
-class HotelModel(banco.Model):
+class HotelModel():
     
-    __tablename__ = 'empresa'
-    
-    id = banco.Column(banco.String, primary_key=True)
-    name = banco.Column(banco.String(80))
-    email = banco.Column(banco.String(80))
-    business = banco.Column(banco.String(80))
-    role = banco.Column(banco.String(80))
-    manager = banco.Column(banco.String(80))
     
     def __init__(self, id, name, email, business, role, manager):
         self.id = id,
@@ -29,39 +19,6 @@ class HotelModel(banco.Model):
             'manager': self.manager,
         }
         
-        
-modelo = [{
-    "id": "0",
-    "empresa": "credihabitar",
-    "infos": {
-        "name": "Tiago",
-        "email": "tiago@tiago.com",
-        "gestor": "Haldane"
-    },
-    
-    "id": "0",
-    "name": "Haldane",
-    "email": "haldane@credihabitar.com",
-    "business": "CrediHabitar",    
-    "role": "CEO",
-    "manager": "Haldane"
-},
-{
-    "id": "1",
-    "name": "Tiago",
-    "email": "tiago@credihabitar.com",
-    "business": "CrediHabitar",    
-    "role": "CDO",
-    "manager": "Tiago"
-},
-{
-    "id": "2",
-    "name": "Rodrigo",
-    "email": "rodrigo@credihabitar.com",
-    "business": "CrediHabitar",    
-    "role": "CDO",
-    "manager": "Tiago"
-}]
 
 
 enterprises = [{

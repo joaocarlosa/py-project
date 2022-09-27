@@ -1,22 +1,79 @@
-from flask_restful import Resource, reqparse
-from flask import jsonify, make_response
-import json
-from models.data import *
-from controllers.company import *
-
-class Collaborator(Resource):
-    
-    #show all collaborator in enterprise args
-    def get(self, business):
-        data = []
-        for collab in enterprises:
-            if collab['business'] == business:
-                return collab
-        return None
-
-    def delete(self, name):
-        global enterprises
-        enterprises = [enterprise for enterprise in enterprises if enterprise['name'] != name] #list comprehension
-        return make_response(jsonify(enterprises), 200)
-    
+class Collaborator:
+   
+    def __init__(self, id, name, email, business, role, manager):
+        self.id = id,
+        self.name = name
+        self.email = email,
+        self.business = business
+        self.role = role
+        self.manager = manager
         
+    def json(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'email': self.email,
+            'business': self.business,
+            'role': self.role,
+            'manager': self.manager,
+        }
+        
+        
+modelo = [{
+    "id": "0",
+    "empresa": "credihabitar",
+    "infos": {
+        "name": "Tiago",
+        "email": "tiago@tiago.com",
+        "gestor": "Haldane"
+    },
+    
+    "id": "0",
+    "name": "Haldane",
+    "email": "haldane@credihabitar.com",
+    "business": "CrediHabitar",    
+    "role": "CEO",
+    "manager": "Haldane"
+},
+{
+    "id": "1",
+    "name": "Tiago",
+    "email": "tiago@credihabitar.com",
+    "business": "CrediHabitar",    
+    "role": "CDO",
+    "manager": "Tiago"
+},
+{
+    "id": "2",
+    "name": "Rodrigo",
+    "email": "rodrigo@credihabitar.com",
+    "business": "CrediHabitar",    
+    "role": "CDO",
+    "manager": "Tiago"
+}]
+
+
+enterprises = [{
+    "id": "0",
+    "name": "Haldane",
+    "email": "haldane@credihabitar.com",
+    "business": "CrediHabitar",    
+    "role": "CEO",
+    "manager": "Haldane"
+},
+{
+    "id": "1",
+    "name": "Tiago",
+    "email": "tiago@credihabitar.com",
+    "business": "CrediHabitar",    
+    "role": "CDO",
+    "manager": "Tiago"
+},
+{
+    "id": "2",
+    "name": "Rodrigo",
+    "email": "rodrigo@credihabitar.com",
+    "business": "CrediHabitar",    
+    "role": "CDO",
+    "manager": "Tiago"
+}]
