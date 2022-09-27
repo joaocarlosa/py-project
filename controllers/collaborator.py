@@ -1,79 +1,43 @@
-class Collaborator:
-   
-    def __init__(self, id, name, email, business, role, manager):
-        self.id = id,
-        self.name = name
-        self.email = email,
-        self.business = business
-        self.role = role
-        self.manager = manager
-        
-    def json(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'email': self.email,
-            'business': self.business,
-            'role': self.role,
-            'manager': self.manager,
-        }
-        
-        
-modelo = [{
-    "id": "0",
-    "empresa": "credihabitar",
-    "infos": {
-        "name": "Tiago",
-        "email": "tiago@tiago.com",
-        "gestor": "Haldane"
-    },
+from flask_restful import Resource, reqparse
+from flask import jsonify, make_response
+import json
+from models.data import *
+
+ITEM_NOT_FOUND = 'Item not found'
+
+class Collaborators(Resource):
+    def get(self):
+        return enterprises   
+
     
-    "id": "0",
-    "name": "Haldane",
-    "email": "haldane@credihabitar.com",
-    "business": "CrediHabitar",    
-    "role": "CEO",
-    "manager": "Haldane"
-},
-{
-    "id": "1",
-    "name": "Tiago",
-    "email": "tiago@credihabitar.com",
-    "business": "CrediHabitar",    
-    "role": "CDO",
-    "manager": "Tiago"
-},
-{
-    "id": "2",
-    "name": "Rodrigo",
-    "email": "rodrigo@credihabitar.com",
-    "business": "CrediHabitar",    
-    "role": "CDO",
-    "manager": "Tiago"
-}]
+class Collaborator(Resource):
+    
+    args = reqparse.RequestParser()
+    args.add_argument('id')    
+    args.add_argument('business')
+    args.add_argument('name')
+    args.add_argument('email')
+    
+    
+    def find_enterprise(business):
+        for enterprise in enterprises:
+            if enterprise['business'] == business:
+                return enterprise
+        return None
+    
+    def get(self, business):     #listar dados de uma empresa    
+        enterprise = Collaborator.find_enterprise(business)
+        new_data = []
+        
+        for enterprise in enterprises:
+            if enterprise['business'] == business:
+                new_data.append(enterprise)
+        return new_data    
+        
 
-
-enterprises = [{
-    "id": "0",
-    "name": "Haldane",
-    "email": "haldane@credihabitar.com",
-    "business": "CrediHabitar",    
-    "role": "CEO",
-    "manager": "Haldane"
-},
-{
-    "id": "1",
-    "name": "Tiago",
-    "email": "tiago@credihabitar.com",
-    "business": "CrediHabitar",    
-    "role": "CDO",
-    "manager": "Tiago"
-},
-{
-    "id": "2",
-    "name": "Rodrigo",
-    "email": "rodrigo@credihabitar.com",
-    "business": "CrediHabitar",    
-    "role": "CDO",
-    "manager": "Tiago"
-}]
+        
+class Del_Collaborator(Resource):
+    def delete(self, name):
+        global enterprises
+        enterprises = [enterprise for enterprise in enterprises if enterprise['name'] != name] #list comprehension
+        return make_response(jsonify(enterprises), 200)
