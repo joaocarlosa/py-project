@@ -113,8 +113,9 @@ Before you work on your project, activate the corresponding environment (Windows
 }
 ```
 
-```
-* `![DELETE](https://img.shields.io/badge/-DELETE-red)` - delete a company data 
+
+
+* ![DELETE](https://img.shields.io/badge/-DELETE-red) - delete a company data 
 
 ```bash
 : 0.0.0.0/companies/{id}
