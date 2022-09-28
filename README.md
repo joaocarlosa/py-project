@@ -4,28 +4,34 @@
 
 implementation of a Rest API for company org chart
 
-Biblioteca necessárias:
+Library needed:
 
 Flask 
 ```bash
 $ pip install -U Flask
 ```
 Flask RestFul
-
 ```bash
 $ pip install -U flask_restful
 ```
 
-Create a project folder and a venv folder within:
-
+Create a project folder and a venv folder within (Windows):
 ```bash
 > mkdir myproject
 > cd myproject
 > py -3 -m venv venv
 ```
 
-Before you work on your project, activate the corresponding environment:
+Before you work on your project, activate the corresponding environment (Windows):
 
 ```bash
 > venv\Scripts\activate
+```
+
+---
+
+API call examples
+
+```bash
+POST: localhost:5000/collaborator/CrediHabitar
 ```
