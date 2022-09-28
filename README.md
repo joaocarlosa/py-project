@@ -23,14 +23,13 @@ Create a project folder and a venv folder within (Windows):
 ```
 
 Before you work on your project, activate the corresponding environment (Windows):
-
 ```bash
 > venv\Scripts\activate
 ```
 
 ---
 
-Working with company data
+# Working with company data
 
 
 * `GET` - listing all company data
@@ -72,12 +71,47 @@ Working with company data
 ```JSON
 {
     "id": "0",
+    "name": "John Doe - new",
+    "email": "john@mail.com - new",
+    "business": "Google - new",
+    "role": "Dev - New",
+    "manager": "David - New"
+}
+```
+
+* `DELETE` - delete a company data
+```bash
+: 0.0.0.0/companies/{id}
+```
+
+---
+
+# working with employee data
+
+* `GET` - listing contributor information by name
+```bash
+0.0.0.0/collaborator/{name}
+```
+
+* `GET` - list employees of a company
+```bash
+0.0.0.0/collaborator/{business}
+
+* `POST` - Register data of a new collaborator
+```bash
+: 0.0.0.0/collaborator/{id}
+```
+```JSON
+{
+    "id": "0",
     "name": "John Doe",
     "email": "john@mail.com",
     "business": "Google",
     "role": "dev",
     "manager": "David"
 }
+```
+
 ```
 * `DELETE` - delete a company data 
 
