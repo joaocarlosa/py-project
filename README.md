@@ -120,3 +120,17 @@ Before you work on your project, activate the corresponding environment (Windows
 ```bash
 : 0.0.0.0/companies/{id}
 ```
+
+
+## project structure
+```
+├── app
+│   ├── main.py
+│   ├── controllers             // Our API core handlers - Common response functions 
+│   │   ├── collaborator.py    
+│   │   ├── company.py          
+│   │   └── organization.py     
+│   └── model
+│       └── data.py             // Models for our application
+└── main.py
+```
