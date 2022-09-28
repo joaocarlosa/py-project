@@ -1,6 +1,6 @@
 # py-project
 
-![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=IN%20PROGRESS&color=GREEN&style=for-the-badge)
 
 implementation of a Rest API for company org chart
 
@@ -38,7 +38,7 @@ Before you work on your project, activate the corresponding environment (Windows
 0.0.0.0/companies
 ```
 
-* `GET` - listing company data by id
+* ![Badge em Desenvolvimento](https://img.shields.io/static/v1?label=<GET>&message=<GET>&color=<BLUE>) - listing company data by id
 
 ```bash
 0.0.0.0/companies/{id}
