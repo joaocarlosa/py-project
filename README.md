@@ -47,12 +47,12 @@ register a company (attributes: [:name])
 ```
 
 ```JSON
-  {
-		"id": "0",
-		"name": "John Doe",
-		"email": "john@mail.com",
-		"business": "Google",
-		"role": "dev",
-		"manager": "David"
-	}
+{
+    "id": "0",
+    "name": "John Doe",
+    "email": "john@mail.com",
+    "business": "Google",
+    "role": "dev",
+    "manager": "David"
+}
 ```
