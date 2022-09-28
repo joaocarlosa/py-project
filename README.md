@@ -38,7 +38,7 @@ Before you work on your project, activate the corresponding environment (Windows
 0.0.0.0/companies
 ```
 
-* ![Badge em Desenvolvimento](https://img.shields.io/static/v1?label=<GET>&message=<GET>&color=<BLUE>) - listing company data by id
+* ![Badge em Desenvolvimento](https://img.shields.io/badge/-GET-blue) - listing company data by id
 
 ```bash
 0.0.0.0/companies/{id}
