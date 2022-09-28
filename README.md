@@ -32,25 +32,23 @@ Before you work on your project, activate the corresponding environment (Windows
 # Working with company data
 
 
-* `GET` - listing all company data
+* ![GET](https://img.shields.io/badge/-GET-blue) - listing all company data
 
 ```bash
 0.0.0.0/companies
 ```
 
-* ![Badge em Desenvolvimento](https://img.shields.io/badge/-GET-blue) - listing company data by id
+* ![GET](https://img.shields.io/badge/-GET-blue) - listing company data by id
 
 ```bash
 0.0.0.0/companies/{id}
 ```
 
 
-* `POST` - register a new company data 
-
+* ![POST](https://img.shields.io/badge/-POST-brightgreen) - register a new company data
 ```bash
 : 0.0.0.0/companies/{id}
 ```
-
 ```JSON
 {
     "id": "0",
@@ -62,7 +60,9 @@ Before you work on your project, activate the corresponding environment (Windows
 }
 ```
 
-* `PUT` - update a company data 
+
+
+* ![PUT](https://img.shields.io/badge/-PUT-orange) - update a company data 
 
 ```bash
 : 0.0.0.0/companies/{id}
@@ -88,17 +88,17 @@ Before you work on your project, activate the corresponding environment (Windows
 
 # working with employee data
 
-* `GET` - listing contributor information by name
+* ![GET](https://img.shields.io/badge/-GET-blue) - listing contributor information by name
 ```bash
 0.0.0.0/collaborator/{name}
 ```
 
-* `GET` - list employees of a company
+* ![GET](https://img.shields.io/badge/-GET-blue) - list employees of a company
 ```bash
 0.0.0.0/collaborator/{business}
 ```
 
-* `GET`  - Register data of a new collaborator
+* ![POST](https://img.shields.io/badge/-POST-brightgreen)  - Register data of a new collaborator
 ```bash
 : 0.0.0.0/collaborator/{id}
 ```
@@ -114,7 +114,7 @@ Before you work on your project, activate the corresponding environment (Windows
 ```
 
 ```
-* `DELETE` - delete a company data 
+* `![DELETE](https://img.shields.io/badge/-DELETE-red)` - delete a company data 
 
 ```bash
 : 0.0.0.0/companies/{id}
