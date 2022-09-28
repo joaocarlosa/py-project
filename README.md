@@ -30,22 +30,26 @@ Before you work on your project, activate the corresponding environment (Windows
 
 ---
 
-Examples of API method calls:
+Working with company data
 
-
-
-list companies in the system
 
 * `GET` - listing all company data
 
 ```bash
-localhost:5000/companies
+0.0.0.0/companies
 ```
+
+* `GET` - listing company data by id
+
+```bash
+0.0.0.0/companies/{id}
+```
+
 
 * `POST` - register a new company data 
 
 ```bash
-: 0.0.0.0/collaborator/{name}
+: 0.0.0.0/companies/{id}
 ```
 
 ```JSON
@@ -57,4 +61,26 @@ localhost:5000/companies
     "role": "dev",
     "manager": "David"
 }
+```
+
+* `PUT` - update a company data 
+
+```bash
+: 0.0.0.0/companies/{id}
+```
+
+```JSON
+{
+    "id": "0",
+    "name": "John Doe",
+    "email": "john@mail.com",
+    "business": "Google",
+    "role": "dev",
+    "manager": "David"
+}
+```
+* `DELETE` - delete a company data 
+
+```bash
+: 0.0.0.0/companies/{id}
 ```
