@@ -96,8 +96,9 @@ Before you work on your project, activate the corresponding environment (Windows
 * `GET` - list employees of a company
 ```bash
 0.0.0.0/collaborator/{business}
+```
 
-* `POST` - Register data of a new collaborator
+* `GET`  - Register data of a new collaborator
 ```bash
 : 0.0.0.0/collaborator/{id}
 ```
