@@ -35,12 +35,14 @@ Examples of API method calls:
 
 
 list companies in the system
-*GET:
+
+* `GET` - listing all company data
+
 ```bash
-: 0.0.0.0/collaborator/{name}
+localhost:5000/companies
 ```
 
-register a company (attributes: [:name])
+* `POST` - register a new company data 
 
 ```bash
 : 0.0.0.0/collaborator/{name}
