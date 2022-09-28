@@ -30,8 +30,29 @@ Before you work on your project, activate the corresponding environment (Windows
 
 ---
 
-API call examples
+Examples of API method calls:
+
+
+
+list companies in the system
+*GET:
+```bash
+: 0.0.0.0/collaborator/{name}
+```
+
+register a company (attributes: [:name])
 
 ```bash
-POST: localhost:5000/collaborator/CrediHabitar
+: 0.0.0.0/collaborator/{name}
+```
+
+```JSON
+  {
+		"id": "0",
+		"name": "John Doe",
+		"email": "john@mail.com",
+		"business": "Google",
+		"role": "dev",
+		"manager": "David"
+	}
 ```
