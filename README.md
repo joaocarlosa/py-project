@@ -125,7 +125,6 @@ Before you work on your project, activate the corresponding environment (Windows
 ## project structure
 ```
 ├── app
-│   ├── main.py
 │   ├── controllers             // Our API core handlers - Common response functions 
 │   │   ├── collaborator.py    
 │   │   ├── company.py          
